@@ -151,6 +151,22 @@ bossBars.style.transform =
 
 }
 
+function aplicarEscalaMenu() {
+
+    const menu = document.getElementById("playerMenu");
+
+    const escala = Math.min(
+        window.innerWidth / 1280,
+        window.innerHeight / 720
+    );
+
+    menu.style.transformOrigin = "center center";
+
+    menu.style.transform =
+        `translate(-50%, -50%) scale(${escala})`;
+
+}
+
 
 function aplicarVolumen() {
 
@@ -163,6 +179,7 @@ aplicarEscalaDialogo();
 aplicarEscalaJoystick();
 aplicarOpacidadJoystick();
 aplicarEscalaHIU();
+aplicarEscalaMenu();
 aplicarVolumen();
 
 document.getElementById("joystickMas").onclick = () => {
@@ -274,3 +291,4 @@ document.getElementById("hiuMenos").onclick = () => {
     aplicarEscalaHIU();
 
 };
+window.addEventListener("resize", aplicarEscalaMenu);

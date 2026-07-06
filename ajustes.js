@@ -157,7 +157,7 @@ function aplicarEscalaMenu() {
 
     const escala = Math.min(
         window.innerWidth / 1280,
-        window.innerHeight / 720
+        window.innerHeight / 600
     );
 
     menu.style.transformOrigin = "center center";
